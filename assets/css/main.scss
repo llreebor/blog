@@ -45,6 +45,37 @@
 }
 body {
   background-color: #0d1816;
+  color: #fff;
 }
 
-// Fonts
+// Hero
+.section {
+  // .section__hero
+
+  &__hero {
+  }
+}
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // .hero__title
+
+  &__title {
+    font-size: 300px;
+    color: white;
+  }
+
+  // .hero__img
+
+  &__img {
+    aspect-ratio: 8/5;
+    transform: translateY(-140px);
+    z-index: -10;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+.logo {
+}
