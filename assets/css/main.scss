@@ -1,81 +1,323 @@
 // Fonts
 @font-face {
-  font-family: "Geist";
-  src: url("../font/Geist-Regular.otf");
-  src: url("../font/Geist-Regular.otf") format("opentype"),
-    url("../font/Geist-Regular.woff2") format("woff2"),
-    url("../font/Geist-Regular.ttf") format("truetype");
-  font-weight: 400;
+	font-family: 'Geist';
+	src: url('../font/Geist-Regular.otf');
+	src: url('../font/Geist-Regular.otf') format('opentype'),
+		url('../font/Geist-Regular.woff2') format('woff2'),
+		url('../font/Geist-Regular.ttf') format('truetype');
+	font-weight: 400;
 }
 @font-face {
-  font-family: "Geist";
-  src: url("../font/Geist-Medium.otf");
-  src: url("../font/Geist-Medium.otf") format("opentype"),
-    url("../font/t/Geist-Medium.woff2") format("woff2"),
-    url("../font/Geist-Medium.ttf") format("truetype");
-  font-weight: 500;
+	font-family: 'Geist';
+	src: url('../font/Geist-Medium.otf');
+	src: url('../font/Geist-Medium.otf') format('opentype'),
+		url('../font/t/Geist-Medium.woff2') format('woff2'),
+		url('../font/Geist-Medium.ttf') format('truetype');
+	font-weight: 500;
 }
 @font-face {
-  font-family: "Geist";
-  src: url("../font/Geist-SemiBold.otf");
-  src: url("../font/Geist-SemiBold.otf") format("opentype"),
-    url("../font/t/Geist-SemiBold.woff2") format("woff2"),
-    url("../font/Geist-SemiBold.ttf") format("truetype");
-  font-weight: 600;
+	font-family: 'Geist';
+	src: url('../font/Geist-SemiBold.otf');
+	src: url('../font/Geist-SemiBold.otf') format('opentype'),
+		url('../font/t/Geist-SemiBold.woff2') format('woff2'),
+		url('../font/Geist-SemiBold.ttf') format('truetype');
+	font-weight: 600;
 }
 @font-face {
-  font-family: "Geist";
-  src: url("../font/Geist-Black.otf");
-  src: url("../font/Geist-Black.otf") format("opentype"),
-    url("../font/t/Geist-Black.woff2") format("woff2"),
-    url("../font/Geist-Black.ttf") format("truetype");
-  font-weight: 600;
+	font-family: 'Geist';
+	src: url('../font/Geist-Black.otf');
+	src: url('../font/Geist-Black.otf') format('opentype'),
+		url('../font/t/Geist-Black.woff2') format('woff2'),
+		url('../font/Geist-Black.ttf') format('truetype');
+	font-weight: 600;
 }
-
+$breakpoint1450: 1449.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint420: 419.98 + px;
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Geist", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Geist', sans-serif;
 }
 .container {
-  max-width: 1196px;
-  padding: 0 43px;
-  margin: 0 auto;
+	max-width: 1196px;
+	padding: 0 43px;
+	margin: 0 auto;
+	@media (max-width: $breakpoint420) {
+		padding: 0 20px;
+	}
 }
 body {
-  background-color: #0d1816;
-  color: #fff;
+	background-color: #0d1816;
+	color: #fff;
+}
+.text {
+	color: #9b9b9b;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 2.4px;
+	@media (max-width: $breakpoint768) {
+		font-size: 16px;
+		letter-spacing: 1.92px;
+	}
+}
+// Header
+.review {
+	padding-bottom: 150px;
+	// .review__header
+	&__header {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	// .review__logo
+	&__logo {
+		img {
+			@media (max-width: $breakpoint768) {
+				max-width: 183px;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	// .review__title
+	&__title {
+		font-size: 300px;
+		color: white;
+		@media (max-width: $breakpoint1450) {
+			font-size: 200px;
+		}
+		@media (max-width: $breakpoint992) {
+			font-size: 140px;
+		}
+		@media (max-width: $breakpoint768) {
+			font-size: 100px;
+		}
+		@media (max-width: $breakpoint420) {
+			font-size: 60px;
+		}
+	}
+	// .review__img
+	&__img {
+		aspect-ratio: 8/5;
+		// transform: translateY(-140px);
+		margin-top: -140px;
+		z-index: -10;
+		max-width: 100%;
+		width: 100%;
+		height: auto;
+		border-radius: 5px;
+		@media (max-width: $breakpoint992) {
+			// transform: translateY(-80px);
+			margin-top: -80px;
+		}
+		@media (max-width: $breakpoint420) {
+			// transform: translateY(-30px);
+			margin-top: -30px;
+		}
+	}
 }
 
-// Hero
-.section {
-  // .section__hero
-
-  &__hero {
-  }
+// Info
+.review {
+	// .review__info
+	&__info {
+		margin-top: 36px;
+		@media (max-width: $breakpoint768) {
+			margin-top: 22px;
+		}
+	}
+	// .review__name
+	&__name {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		color: #fff;
+		font-size: 40px;
+		font-weight: 900;
+		letter-spacing: 4.8px;
+		margin-bottom: 12px;
+		@media (max-width: $breakpoint768) {
+			font-size: 25px;
+			letter-spacing: 3px;
+		}
+	}
+	// .review__euro
+	&__euro {
+		@media (max-width: $breakpoint768) {
+			width: 36px;
+		}
+	}
+	// .review__stats
+	&__stats {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 42px;
+		@media (max-width: $breakpoint992) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 34px;
+		}
+		@media (max-width: $breakpoint768) {
+			margin-top: 36px;
+		}
+	}
 }
-.hero {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  // .hero__title
+.rating {
+	// .rating__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
 
-  &__title {
-    font-size: 300px;
-    color: white;
-  }
-
-  // .hero__img
-
-  &__img {
-    aspect-ratio: 8/5;
-    transform: translateY(-140px);
-    z-index: -10;
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-  }
+	// .rating__header
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .rating__header-name
+	&__header-name {
+		color: #fff;
+		font-size: 24px;
+		letter-spacing: 2.88px;
+		font-weight: 400;
+		@media (max-width: $breakpoint768) {
+			font-size: 16px;
+			letter-spacing: 1.92px;
+		}
+	}
+	// .rating__header-score
+	&__header-score {
+		color: #fff;
+		font-weight: 600;
+		font-size: 20px;
+		letter-spacing: 2.4px;
+		@media (max-width: $breakpoint768) {
+			letter-spacing: 1.8px;
+			font-size: 15px;
+		}
+	}
+	// .rating__progress
+	&__progress {
+		height: 10px;
+		width: 100%;
+		background: #3f3f3f;
+		margin-top: 12px;
+		position: relative;
+		@media (max-width: $breakpoint768) {
+			height: 8px;
+		}
+		span {
+			background: #fff;
+			display: flex;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+		}
+	}
 }
-.logo {
+.info {
+	// .info__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-align: right;
+		gap: 46px;
+		@media (max-width: $breakpoint992) {
+			align-items: flex-start;
+			text-align: left;
+		}
+		@media (max-width: $breakpoint768) {
+			gap: 26px;
+		}
+	}
+
+	// .info__title
+	&__title {
+		color: #fff;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 3.84px;
+		@media (max-width: $breakpoint768) {
+			font-size: 26px;
+			letter-spacing: 3.12px;
+		}
+	}
+	// .info__tags
+	&__tags {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		margin-top: 16px;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		@media (max-width: $breakpoint992) {
+			justify-content: flex-start;
+		}
+		span {
+			color: #000;
+			font-size: 15px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: 1.8px;
+			background: #fff;
+			padding: 8px 16px;
+			border-radius: 47px;
+		}
+	}
+}
+
+// Gallery
+.review {
+	// .review__summary
+	&__summary {
+		margin-top: 64px;
+		@media (max-width: $breakpoint768) {
+			margin-top: 34px;
+		}
+	}
+	// .review__subtitle
+	&__subtitle {
+		color: #fff;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 3.84px;
+		margin-bottom: 21px;
+		@media (max-width: $breakpoint768) {
+			font-size: 26px;
+			letter-spacing: 3.12px;
+			margin-bottom: 14px;
+		}
+	}
+	// .review__gallery
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 34px;
+		margin-top: 64px;
+		@media (max-width: $breakpoint768) {
+			margin-top: 26px;
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
+		}
+		img {
+			aspect-ratio: 1 / 1;
+			max-width: 100%;
+			width: 100%;
+			height: auto;
+		}
+	}
 }
